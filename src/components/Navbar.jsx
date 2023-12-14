@@ -1,13 +1,15 @@
 //cuenta 013
 import React from 'react'
 import { Stack, Typography, Button, useTheme } from '@mui/material'
+import {useNavigate} from 'react-router-dom'
 import theme from '../theme'
 
 export const Navbar = ({
-    isLogged
+    isLogin
 }) => {
     const theme = useTheme()
     const colors = theme.palette
+    const navigate = useNavigate()
     return (
         <Stack
             minWidth="100vw"
@@ -16,21 +18,38 @@ export const Navbar = ({
             bgcolor={colors.secondary.main}
             justifyContent="space-between"
             direction="row"
-            alignItems="center" 
+            alignItems="center"
         >
             <Stack textAlign="center">
                 <Typography color={colors.primary.main} variant='h4' fontWeight="600">Davidplata</Typography>
             </Stack>
 
             <Stack marginRight="30px">
-                <Button 
-                variant="contained" 
+                {isLogin ? <Button
+                    variant="contained"
+                    sx={{
+                        backgroundColor: colors.primary.main,
+                        color: colors.secondary.main,
+                        fontWeight: "600",
+                    }}
+                    onClick={() => navigate("/login")}
+                >Login</Button> : <Stack direction="row" gap="10px"> <Button
+                variant="contained"
                 sx={{
-                    backgroundColor: colors.primary.main, 
+                    backgroundColor: colors.primary.main,
                     color: colors.secondary.main,
                     fontWeight: "600",
-                    }}
-                >Transferir</Button>
+                }}
+                onClick={() => navigate('/movimientos')}
+            >Movimientos</Button> <Button
+            variant="contained"
+            sx={{
+                backgroundColor: colors.primary.main,
+                color: colors.secondary.main,
+                fontWeight: "600",
+            }}
+            onClick={() => navigate('/transferencia')}
+        >Transferir</Button></Stack>}
             </Stack>
         </Stack>
     )

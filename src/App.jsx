@@ -5,19 +5,21 @@ import { Login } from './pages/login'
 import { Navbar } from "./components/Navbar"
 import { ThemeProvider } from "@emotion/react"
 import theme from "./theme"
+import Main from "./pages/Main"
+import Movimientos from "./pages/Movimientos"
 
 function App() {
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navbar />
         <Router>
           <Routes>
-            <Route path='/' />
+            <Route path='/' element={<Main />} />
             <Route path='/login' element={<Login />} />
             <Route path='/home' element={<Home />} />
             <Route path='/transferencia' element={<Transferencia />} />
+            <Route path='/movimientos' element={<Movimientos />} />
           </Routes>
         </Router>
       </ThemeProvider>

@@ -1,18 +1,18 @@
-import React from 'react'
-import {Snackbar, Alert} from '@mui/material'
+import React, { useEffect, useState } from 'react'
+import { Snackbar, Alert } from '@mui/material'
 
 const SnackbarComponent = ({
     open,
     severity,
-    message
+    message,
 }) => {
     return (
-        <Snackbar open={open} autoHideDuration={6000} >
+        <Snackbar open={open} autoHideDuration={6000} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} >
             <Alert severity={severity} sx={{ width: '100%' }}>
-                {}
+                {message}
             </Alert>
         </Snackbar>
-        )
-}
+    );
+};
 
-export default SnackbarComponent
+export default SnackbarComponent;
