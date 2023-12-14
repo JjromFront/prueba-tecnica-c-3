@@ -21,12 +21,12 @@ export const Navbar = ({
             direction="row"
             alignItems="center"
         >
-            <Stack textAlign="center" sx={{
+            <Stack textAlign="center" >
+                <Typography color={colors.primary.main} variant='h4' fontWeight="600" sx={{
                 "&:hover": {
                     cursor: "pointer"
                 }
-            }} onClick={navigate("/home")}>
-                <Typography color={colors.primary.main} variant='h4' fontWeight="600">Davidplata</Typography>
+            }} onClick={navigate("/home")}>Davidplata</Typography>
             </Stack>
 
             <Stack marginRight="30px">
