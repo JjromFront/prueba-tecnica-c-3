@@ -26,7 +26,7 @@ export const Navbar = ({
                 "&:hover": {
                     cursor: "pointer"
                 }
-            }} onClick={navigate("/home")}>Davidplata</Typography>
+            }} onClick={() => navigate("/home")}>Davidplata</Typography>
             </Stack>
 
             <Stack marginRight="30px">
