@@ -10,6 +10,7 @@ export const Navbar = ({
     const theme = useTheme()
     const colors = theme.palette
     const navigate = useNavigate()
+
     return (
         <Stack
             minWidth="100vw"
@@ -20,7 +21,11 @@ export const Navbar = ({
             direction="row"
             alignItems="center"
         >
-            <Stack textAlign="center">
+            <Stack textAlign="center" sx={{
+                "&:hover": {
+                    cursor: "pointer"
+                }
+            }} onClick={navigate("/home")}>
                 <Typography color={colors.primary.main} variant='h4' fontWeight="600">Davidplata</Typography>
             </Stack>
 
